@@ -1,43 +1,37 @@
+import {observer} from 'mobx-react';
 import React, {Component} from 'react';
-import {StyleSheet} from 'react-native'
-import {List, ListItem} from 'react-native-elements';
+import {StyleSheet, View} from 'react-native'
+import {Button, List, ListItem, Text} from 'react-native-elements';
 
-const list = [
-    {
-        name: 'Fitness',
-        icon: 'fitness-center',
-        timeTrained: '30 hours',
-    },
-    {
-        name: 'Art',
-        icon: 'brush',
-        timeTrained: '10 hours',
-    },
-    {
-        name: 'Meditation',
-        icon: 'insert-emoticon',
-        timeTrained: '5 hours',
-    },
-];
-
+@observer
 export default class SkillList extends Component {
     render() {
+        const {navigate} = this.props.navigation;
         return (
-            <List containerStyle={styles.list}>
-                {
-                    list.map((l,i) => (
-                        <ListItem
-                            containerStyle={styles.listItem}
-                            hideChevron={true}
-                            key={i}
-                            title={l.name}
-                            rightTitle={l.timeTrained}
-                            leftIcon={{name: l.icon}}
-                        />
-                    ))
-                }
-            </List>
-        )
+            <View>
+                <List containerStyle={styles.list}>
+                    {
+                        this.props.skills.map((skill, i) => (
+                            <ListItem
+                                containerStyle={styles.listItem}
+                                hideChevron={true}
+                                key={i}
+                                title={skill.name}
+                                rightTitle={skill.timeTrained}
+                                leftIcon={{name: skill.icon}}
+                            />
+                        ))
+                    }
+                </List>
+                <Button
+                    raised
+                    icon={{name: 'add-circle'}}
+                    title='Add a skill!'
+                    onPress={() => navigate('AddSkill')}
+                />
+                <Text>{JSON.stringify(this.props.skills)}</Text>
+            </View>
+        );
     }
 }
 

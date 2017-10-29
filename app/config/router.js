@@ -11,14 +11,15 @@ const SkillsTab = StackNavigator(
     {
         MySkills: {
             screen: MySkillsScreen,
-            headerMode: null,
             navigationOptions: {
                 title: 'My Skills',
             },
         },
         AddSkill: {
             screen: AddSkillScreen,
-            title: 'Add a new skill',
+            navigationOptions: {
+                title: 'Add a skill',
+            },
         },
     },
 );

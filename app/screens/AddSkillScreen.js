@@ -4,7 +4,7 @@ import {SkillForm} from '../components';
 export default class AddSkillScreen extends Component {
     render() {
         return (
-            <SkillForm/>
+            <SkillForm navigation={this.props.navigation}/>
         );
     }
 }
