@@ -1,0 +1,19 @@
+import React, {Component} from 'react';
+import {
+    Platform,
+    StyleSheet,
+    View
+} from 'react-native';
+
+export default class StatusBarBackground extends Component {
+    render() {
+        return <View style={[styles.statusBarBackground, this.props.style || {}]}/>
+    }
+}
+
+const styles = StyleSheet.create({
+    statusBarBackground: {
+        height: (Platform.OS === 'ios') ? 20 : 0,
+        backgroundColor: 'grey',
+    },
+});
