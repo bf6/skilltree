@@ -1,5 +1,7 @@
 import SkillsStore from './skillsStore';
+import TimeboxStore from './timeboxStore';
 
 export default {
-    skillsStore: new SkillsStore()
+    skillsStore: new SkillsStore(),
+    timeboxStore: new TimeboxStore(),
 }

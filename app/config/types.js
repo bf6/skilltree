@@ -7,3 +7,9 @@ export type Skill = {
     icon: string;
     timeTrained: ?string;
 }
+
+export type Timebox = {
+    time: string,
+    days: Array<string>,
+    length: string,
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native'
-import {Button, FormLabel, FormInput, FormValidationMessage, Text} from 'react-native-elements';
+import {Button, FormLabel, FormInput, FormValidationMessage} from 'react-native-elements';
 import {inject} from 'mobx-react';
 
 @inject('skillsStore')
@@ -56,6 +56,7 @@ export default class SkillForm extends Component {
                 <FormInput onChangeText={(text) => this.updateSkillIcon(text)}/>
                 <Button
                     raised
+                    style={{marginTop: 10}}
                     title={'Submit'}
                     onPress={() => {
                         this.createNewSkill();

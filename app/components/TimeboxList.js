@@ -4,21 +4,20 @@ import {StyleSheet} from 'react-native'
 import {List, ListItem} from 'react-native-elements';
 
 @observer
-export default class SkillList extends Component {
+export default class TimeboxList extends Component {
     render() {
         return (
             <List containerStyle={styles.list}>
                 {
-                    this.props.skills.map((skill, i) => (
+                    this.props.timeboxes.map((timebox, i) => (
                         <ListItem
-                            onPress={() => alert('Oh shiiiit')}
+                            onPress={() => alert('SHYZA')}
                             underlayColor={'green'}
                             containerStyle={styles.listItem}
                             hideChevron={true}
                             key={i}
-                            title={skill.name}
-                            rightTitle={skill.timeTrained}
-                            leftIcon={{name: skill.icon}}
+                            title={`${timebox.days} at ${timebox.time}`}
+                            rightTitle={timebox.length}
                         />
                     ))
                 }

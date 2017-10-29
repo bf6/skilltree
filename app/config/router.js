@@ -5,7 +5,12 @@
  */
 
 import {StackNavigator, TabNavigator} from 'react-navigation';
-import {AddSkillScreen, MySkillsScreen} from '../screens/index';
+import {
+    AddSkillScreen,
+    MySkillsScreen,
+    MyTimeboxesScreen,
+    AddTimeboxScreen
+} from '../screens/index';
 
 const SkillsTab = StackNavigator(
     {
@@ -24,6 +29,23 @@ const SkillsTab = StackNavigator(
     },
 );
 
+const ScheduleTab = StackNavigator(
+    {
+        MyTimeboxes: {
+            screen: MyTimeboxesScreen,
+            navigationOptions: {
+                title: 'My Schedule'
+            },
+        },
+        AddTimebox: {
+            screen: AddTimeboxScreen,
+            navigationOptions: {
+                title: 'Add a timebox'
+            },
+        },
+    },
+);
+
 export const SkillTreeNavigator = TabNavigator(
     {
         SkillsTab: {
@@ -32,6 +54,12 @@ export const SkillTreeNavigator = TabNavigator(
                 tabBarLabel: 'Skills'
             },
         },
+        ScheduleTab: {
+            screen: ScheduleTab,
+            navigationOptions: {
+                tabBarLabel: 'Schedule'
+            }
+        }
     },
     {
         tabBarPosition: 'bottom',
