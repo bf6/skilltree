@@ -6,12 +6,13 @@ import {List, ListItem} from 'react-native-elements';
 @observer
 export default class SkillList extends Component {
     render() {
+        const {navigate} = this.props.navigation;
         return (
             <List containerStyle={styles.list}>
                 {
                     this.props.skills.map((skill, i) => (
                         <ListItem
-                            onPress={() => alert('Oh shiiiit')}
+                            onPress={() => navigate('SkillDetail', {skill})}
                             underlayColor={'green'}
                             containerStyle={styles.listItem}
                             hideChevron={true}

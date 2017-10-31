@@ -9,8 +9,10 @@ import {
     AddSkillScreen,
     MySkillsScreen,
     MyTimeboxesScreen,
-    AddTimeboxScreen
-} from '../screens/index';
+    AddTimeboxScreen,
+    SkillDetailScreen,
+    TrainSkillScreen,
+} from '../screens';
 
 const SkillsTab = StackNavigator(
     {
@@ -26,6 +28,12 @@ const SkillsTab = StackNavigator(
                 title: 'Add a skill',
             },
         },
+        SkillDetail: {
+            screen: SkillDetailScreen,
+        },
+        TrainSkill: {
+            screen: TrainSkillScreen,
+        }
     },
 );
 

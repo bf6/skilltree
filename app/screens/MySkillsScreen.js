@@ -14,6 +14,7 @@ export default class MySkillsScreen extends Component {
             <View>
                 <SkillList
                     skills={this.props.skillsStore.skills}
+                    navigation={this.props.navigation}
                 />
                 <Button
                     raised
