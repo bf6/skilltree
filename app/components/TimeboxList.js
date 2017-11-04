@@ -5,6 +5,16 @@ import {List, ListItem} from 'react-native-elements';
 
 @observer
 export default class TimeboxList extends Component {
+
+    renderTitle(days, time) {
+        strTime = time.toLocaleString('en-US', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+        });
+        return `${days} at ${strTime}`;
+    }
+
     render() {
         return (
             <List containerStyle={styles.list}>
@@ -16,7 +26,7 @@ export default class TimeboxList extends Component {
                             containerStyle={styles.listItem}
                             hideChevron={true}
                             key={i}
-                            title={`${timebox.days} at ${timebox.time}`}
+                            title={this.renderTitle(timebox.days, timebox.time)}
                             rightTitle={timebox.length}
                         />
                     ))

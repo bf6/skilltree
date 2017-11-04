@@ -8,9 +8,9 @@ import type {Timebox} from '../config/types';
 export default class TimeboxStore {
     @observable timeboxes = [
         {
-            time: '5pm',
-            days: ['M', 'T', 'W'],
-            length: '40 minutes',
+            time: new Date(),
+            days: ['S','M','T','W','R','F','Sa'],
+            lengthMinutes: 30,
         }
     ];
 

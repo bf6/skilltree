@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native'
+import {View} from 'react-native'
 import {Button, FormLabel, FormInput, FormValidationMessage} from 'react-native-elements';
-import {inject} from 'mobx-react';
 
-@inject('skillsStore')
 export default class SkillForm extends Component {
 
     constructor(props) {
@@ -36,10 +34,6 @@ export default class SkillForm extends Component {
         this.setState({newSkill: newSkill})
     }
 
-    createNewSkill() {
-        this.props.skillsStore.addNewSkill(this.state.newSkill);
-    }
-
     render() {
         const {goBack} = this.props.navigation;
         return (
@@ -59,7 +53,7 @@ export default class SkillForm extends Component {
                     style={{marginTop: 10}}
                     title={'Submit'}
                     onPress={() => {
-                        this.createNewSkill();
+                        this.props.createNewSkill(this.state.newSkill);
                         goBack();
                     }}
                 />

@@ -5,7 +5,6 @@ import {Button} from 'react-native-elements';
 import {View} from 'react-native';
 
 @inject('timeboxStore')
-@observer
 export default class MyTimeboxesScreen extends Component {
     render() {
         const {navigate} = this.props.navigation;

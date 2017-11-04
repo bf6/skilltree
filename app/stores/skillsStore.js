@@ -2,7 +2,7 @@
 Skill Store class with methods
  */
 
-import { observable } from 'mobx';
+import {observable} from 'mobx';
 import type {Skill} from '../config/types';
 
 export default class SkillsStore {

@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 10,
     }
-})
+});

@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import {inject, observer} from 'mobx-react';
+import {inject} from 'mobx-react';
 import {SkillList} from '../components';
 import {View} from 'react-native'
 import {Button} from 'react-native-elements'
 
-
 @inject('skillsStore')
-@observer
 export default class MySkillsScreen extends Component {
     render() {
         const {navigate} = this.props.navigation;
