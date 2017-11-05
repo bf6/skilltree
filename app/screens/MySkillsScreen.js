@@ -6,6 +6,11 @@ import {Button} from 'react-native-elements'
 
 @inject('skillsStore')
 export default class MySkillsScreen extends Component {
+
+    deleteSkill(idx) {
+        this.props.skillsStore.deleteSkill(idx);
+    }
+
     render() {
         const {navigate} = this.props.navigation;
         return (
@@ -13,6 +18,7 @@ export default class MySkillsScreen extends Component {
                 <SkillList
                     skills={this.props.skillsStore.skills}
                     navigation={this.props.navigation}
+                    deleteSkill={this.deleteSkill.bind(this)}
                 />
                 <Button
                     raised

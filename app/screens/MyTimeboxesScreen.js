@@ -6,12 +6,17 @@ import {View} from 'react-native';
 
 @inject('timeboxStore')
 export default class MyTimeboxesScreen extends Component {
+
+    deleteTimebox(idx) {
+        this.props.timeboxStore.deleteTimebox(idx);
+    }
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View>
                 <TimeboxList
                     timeboxes={this.props.timeboxStore.timeboxes}
+                    deleteTimebox={this.deleteTimebox.bind(this)}
                 />
                 <Button
                     raised

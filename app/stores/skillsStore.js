@@ -27,4 +27,8 @@ export default class SkillsStore {
     addNewSkill(skill: Skill) {
         this.skills.push(skill);
     }
+
+    deleteSkill(idx: number) {
+        this.skills.splice(idx, 1);
+    }
 }

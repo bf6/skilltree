@@ -17,4 +17,8 @@ export default class TimeboxStore {
     addNewTimebox(timebox: Timebox) {
         this.timeboxes.push(timebox);
     }
+
+    deleteTimebox(idx: number) {
+        this.timeboxes.splice(idx, 1);
+    }
 }
