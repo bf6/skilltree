@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {inject, observer} from 'mobx-react';
+import {inject} from 'mobx-react';
 import {TimeboxList} from '../components';
 import {Button} from 'react-native-elements';
 import {View} from 'react-native';
